@@ -257,7 +257,7 @@ public class CamusJob extends Configured implements Tool {
 		// output directory in a normal run, but instead written to the
 		// appropriate date-partitioned subdir in camus.destination.path
 		DateTimeFormatter dateFmt = DateUtils.getDateTimeFormatter(
-				"YYYY-MM-dd-HH-mm-ss", DateTimeZone.UTC);
+				"YYYY-MM-dd-HH-mm-ss", DateTimeZone.forID(job.getConfiguration().get("etl.default.timezone")));
 		Path newExecutionOutput = new Path(execBasePath,
 				new DateTime().toString(dateFmt));
 		FileOutputFormat.setOutputPath(job, newExecutionOutput);
