@@ -75,7 +75,7 @@ public class JsonStringMessageDecoder extends MessageDecoder<byte[], String> {
 		// If timestamp wasn't set in the above block,
 		// then set it to current time.
 		if (timestamp == 0) {
-			log.warn("Couldn't find or parse timestamp field '" + timestampField + "' in JSON message, defaulting to current time.");
+//			log.warn("Couldn't find or parse timestamp field '" + timestampField + "' in JSON message, defaulting to current time.");
 			timestamp = System.currentTimeMillis();
 		}
 
